@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}WikiTech - Il portale tecnologico{% endblock %}
+
+{% block content %}
+<section id="hero" class="hero-section">
+    <div class="hero-content">
+        <h2>Benvenuti su WikiTech</h2>
+        <p>Il tuo punto di riferimento per tecnologia, innovazione e programmazione.</p>
+        <a href="{{ url_for('newsletter') }}" class="btn-primary">Iscriviti alla Newsletter</a>
+    </div>
+</section>
+
+<section id="featured" class="content-section">
+    <h2>In Evidenza</h2>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-img">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Intelligenza Artificiale</h3>
+            <p>Le ultime novità nel campo dell'AI e come sta rivoluzionando il nostro mondo.</p>
+            <a href="{{ url_for('approfondimenti') }}" class="btn-more">Leggi di più</a>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <i class="fas fa-server"></i>
+            </div>
+            <h3>Python Avanzato</h3>
+            <p>Tecniche e strumenti per diventare un esperto di Python.</p>
+            <a href="{{ url_for('programmazione') }}" class="btn-more">Leggi di più</a>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Eventi Tech</h3>
+            <p>I più importanti eventi tecnologici in arrivo nei prossimi mesi.</p>
+            <a href="{{ url_for('altro') }}" class="btn-more">Leggi di più</a>
+        </div>
+    </div>
+</section>
+
+<section id="newsletter-prompt" class="content-section">
+    <h2>Resta Aggiornato</h2>
+    <p>Iscriviti alla nostra newsletter per ricevere i migliori contenuti selezionati per te.</p>
+    <a href="{{ url_for('newsletter') }}" class="btn-primary">Iscriviti Ora</a>
+</section>
+{% endblock %}

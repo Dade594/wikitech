@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}WikiTech - Newsletter{% endblock %}
+
+{% block content %}
+<section id="newsletter" class="content-section newsletter-page">
+    <h2>Iscriviti alla Newsletter</h2>
+    <p>Rimani aggiornato con gli ultimi articoli e novità dal mondo della tecnologia!</p>
+    
+    <div class="newsletter-benefits">
+        <div class="benefit">
+            <i class="fas fa-newspaper"></i>
+            <h3>Contenuti Esclusivi</h3>
+            <p>Ricevi articoli e approfondimenti in anteprima.</p>
+        </div>
+        <div class="benefit">
+            <i class="fas fa-bell"></i>
+            <h3>Notifiche Eventi</h3>
+            <p>Scopri in anticipo gli eventi tech più importanti.</p>
+        </div>
+        <div class="benefit">
+            <i class="fas fa-lock"></i>
+            <h3>Privacy Garantita</h3>
+            <p>La tua email non sarà mai condivisa con terzi.</p>
+        </div>
+    </div>
+    
+    <form action="{{ url_for('subscribe') }}" method="POST" class="newsletter-form">
+        <input type="email" name="email" placeholder="Inserisci la tua email" required>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Iscriviti</button>
+    </form>
+    
+    <div class="newsletter-info">
+        <p>Riceverai le nostre newsletter con contenuti selezionati sui temi che più ti interessano. Puoi disiscriverti in qualsiasi momento.</p>
+    </div>
+    
+    <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+</section>
+{% endblock %}

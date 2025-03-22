@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% block title %}WikiTech - Articoli{% endblock %}
+
+{% block content %}
+<section id="articles" class="content-section">
+    <h2>Articoli</h2>
+    {% if articles %}
+    <div class="article-list">
+        {% for article in articles %}
+        <article class="article-card">
+            <div class="article-img">
+                {% if article.image %}
+                <img src="{{ article.image }}" alt="{{ article.title }}">
+                {% else %}
+                <i class="fas fa-newspaper"></i>
+                {% endif %}
+            </div>
+            <div class="article-content">
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> {{ article.date }}</span>
+                    <span><i class="fas fa-user"></i> {{ article.author }}</span>
+                </div>
+                <h3 class="article-title">{{ article.title }}</h3>
+                <p class="article-excerpt">{{ article.excerpt }}</p>
+                <div class="article-footer">
+                    <span class="tag">{{ article.category }}</span>
+                    <a href="{{ url_for('article', id=article.id) }}" class="btn-more">Leggi di più</a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <i class="fas fa-newspaper"></i>
+        <h3>Nessun articolo disponibile</h3>
+        <p>Non ci sono ancora articoli in questa sezione.</p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
